@@ -1,6 +1,7 @@
-import "./Login.scss"
+//import "./Login.scss"
 
 import React, { useState } from 'react'
+
 const Login = () => {
     const [formData, setFormData] = useState({
         email:'',
