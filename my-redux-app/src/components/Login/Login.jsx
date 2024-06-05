@@ -24,8 +24,8 @@ const Login = () => {
     }
   return (
     <form onSubmit={onSubmit}>
-        <input type="email" name="email" value={email} onChange={onChange}/>
-        <input type="password" name="password" value={password} onChange={onChange}/>
+        <input type="email" name="email" placeholder="Email" value={email} onChange={onChange}/>
+        <input type="password" name="password" placeholder="Password" value={password} onChange={onChange}/>
         <button type="submit">Login</button>
     </form>
   )
