@@ -12,10 +12,19 @@ const getUserByUserName = async (username)=>{
     const res = await axios.get(API_URL + "/name", username)
     return res.data
 }
+const login = async(userData)=>{
+  const res = await axios.post(API_URL + "/login", userData);
+  if (res.data) {
+    localStorage.setItem("user", JSON.stringify(res.data.user));
+    localStorage.setItem("token", JSON.stringify(res.data.token));
+  }
+  return res.data
+}
 
 const authService = {
   register,
-  getUserByUserName
+  getUserByUserName,
+  login
 };
 
 export default authService;
