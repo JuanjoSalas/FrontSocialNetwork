@@ -9,7 +9,7 @@ const res = await axios.post(API_URL , userData);
 };
 
 const getUserByUserName = async (username)=>{
-    const res = await axios.get(API_URL + "name" + username)
+    const res = await axios.get(API_URL + "/name", username)
     return res.data
 }
 
