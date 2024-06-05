@@ -1,6 +1,6 @@
 import "./Login.scss"
 import React, { useState } from 'react'
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { login } from "../../features/auth/authSlice"
 
 const Login = () => {
@@ -8,7 +8,18 @@ const Login = () => {
         email:'',
         password:''
     })
+    
     const {email,password} = formData
+    const {isSuccess, isError, msg} = useSelector((state)=>state.auth)
+
+    useEffect(() => {
+        if (isSuccess) {
+            navigate("/");
+        }
+        dispatch(reset());
+    }, [isSuccess, navigate, dispatch]);
+
+
     const onChange = (e)=>{
         setFormData((prevState)=> ({
             ...prevState,
@@ -21,6 +32,8 @@ const Login = () => {
         e.preventDefault()
         console.log('formData',formData)
         dispatch(login(formData))
+
+        
     }
   return (
     <form onSubmit={onSubmit}>
