@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../../features/auth/authSlice"
 
 const Header = () => {
   const { user } = useSelector((state) => state.auth);
@@ -15,6 +16,7 @@ const Header = () => {
       navigate("/search/"+search)
     }
   };
+  
   return (
     <div>
       <span>
@@ -23,7 +25,13 @@ const Header = () => {
       <input type="text" name="search" onKeyUp={handleSearch} />
       {user ? (
         <>
-          
+          <span
+            onClick={() => {
+              dispatch(logout());
+            }}
+          >
+            <Link to="/login"> Logout</Link>
+          </span>
         </>
       ) : (
         <>

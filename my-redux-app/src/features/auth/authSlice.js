@@ -77,8 +77,13 @@ const authSlice = createSlice({
 
         })
         .addCase(login.fulfilled, (state, action) => {
+          state.isSuccess = true;
           state.user = action.payload.user;
           state.token = action.payload.tokenM;
+        })
+        .addCase(login.rejected, (state, action) => {
+          state.isError = true;
+          state.message = action.payload;
         })
         .addCase(logout.fulfilled, (state) => {
           state.user = null;
