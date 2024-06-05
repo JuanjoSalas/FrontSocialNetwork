@@ -33,8 +33,23 @@ export const register = createAsyncThunk(
         console.log(error);
         
     }
-  })
+  });
 
+  export const login = createAsyncThunk("auth/login", async (user) => {
+    try {
+      return await authService.login(user);
+    } catch (error) {
+      console.error(error);
+    }
+  });
+
+  export const logout = createAsyncThunk("auth/logout", async () => {
+    try {
+      return await authService.logout();
+    } catch (error) {
+      console.error(error);
+    }
+  });
 
 const authSlice = createSlice({
     name: "auth",
@@ -68,16 +83,6 @@ const authSlice = createSlice({
     } 
 
 });
-
-
-export const login = createAsyncThunk("auth/login", async (user) => {
-  try {
-    return await authService.login(user);
-  } catch (error) {
-    console.error(error);
-  }
-});
-
 
 export default authSlice.reducer;
 export const { reset } = authSlice.actions;
