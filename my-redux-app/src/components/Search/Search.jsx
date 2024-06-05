@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { getUserByUserName } from '../../features/auth/authSlice';
-import Profile from './Profile';
+import Profile from '../Profile/Profile';
 
 
 const Search = () => {
