@@ -80,6 +80,10 @@ const authSlice = createSlice({
           state.user = action.payload.user;
           state.token = action.payload.tokenM;
         })
+        .addCase(logout.fulfilled, (state) => {
+          state.user = null;
+          state.token = null;
+        })
     } 
 
 });
