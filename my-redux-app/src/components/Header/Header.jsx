@@ -13,7 +13,7 @@ const Header = () => {
   const handleSearch = (e) => {
     setSearch(e.target.value);
     if (e.key == "Enter") {
-      navigate("/search/"+search)
+      navigate("/search/"+ search)
     }
   };
   
@@ -25,6 +25,9 @@ const Header = () => {
       <input type="text" name="search" onKeyUp={handleSearch} />
       {user ? (
         <>
+        <span>
+          <Link to="/profile">Profile /</Link>
+        </span>
           <span
             onClick={() => {
               dispatch(logout());
