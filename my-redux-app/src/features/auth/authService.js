@@ -50,7 +50,6 @@ const authService = {
   getUserInfo,
   login,
   logout,
-  getUserById
 };
 
 export default authService;
