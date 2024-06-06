@@ -3,6 +3,7 @@ import postsService from "./postsService";
 
 const initialStage = {
     posts:[]
+    isLoading: false,
 };
 
 export const getPosts = createAsyncThunk("posts/getPosts", async () => {
@@ -18,11 +19,15 @@ export const PostsSlice = createSlice({
     initialstage,
     reducers: {},
     extraReducers: (builder) => {
-        builder
-            .addCase(getPosts.fulfilled, (state, action) => {
-                state.posts = action.payload;
-            })
+        builder.addCase(getPosts.fulfilled, (state, action) => {
+            state.posts = action.payload;
+            state.isLoading =  false;
+        });
+        builder.addCase(getPosts.pending, (state) => {
+            state.isLoading = true;
+        })          
     },
 });
 
+export const { reset } = PostsSlice.actions;
 export default PostsSlice.reducer;
