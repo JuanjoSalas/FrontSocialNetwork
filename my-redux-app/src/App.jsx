@@ -11,6 +11,7 @@ import UserDetail from './components/UserDetail/UserDetail';
 import Profile from './components/Profile/Profile';
 import PrivateZone from './guards/PrivateZone';
 import NotFound from './components/NotFound/NotFound';
+import PostDetail from "./components/PostDetail/PostDetail";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/search/:username" element={<PrivateZone><Search /></PrivateZone>} />
           <Route path="/userdetail/:id" element={<PrivateZone><UserDetail /></PrivateZone>} />
           <Route path="/profile" element={<PrivateZone><Profile/></PrivateZone>} />
+          <Route path="/post/:id" element={<PrivateZone><PostDetail/></PrivateZone>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer/>

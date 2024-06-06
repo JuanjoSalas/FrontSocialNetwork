@@ -9,6 +9,9 @@ const Posts = () => {
     useEffect(() => {
         dispatch(getPosts());
     }, []);
+    if (isLoading) {
+        return <h1>Cargando posts...</h1>;
+    }
     return (
         <div>
             <h1>Posts</h1>
