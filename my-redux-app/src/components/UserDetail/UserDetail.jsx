@@ -15,10 +15,10 @@ const UserDetail = () => {
 
     return (
     <div>
-        <h2>UserDetail</h2>
-      <p>{user.firstname}</p>
-      <p>{user.lastname}</p>
-      <p>{user.username}</p>
+        <h3>UserDetail</h3>
+      <p>Nombre: {user.firstname}</p>
+      <p>Apellido: {user.lastname}</p>
+      <p>Usuario: {user.username}</p>
     </div>
   )
 }

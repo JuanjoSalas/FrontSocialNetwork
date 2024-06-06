@@ -24,11 +24,17 @@ const getUserById = async (id)=>{
     const res = await axios.get(API_URL + "/id/"+ id)
     return res.data
 }
+const getUserInfo = async ()=>{
+    const token = localStorage.getItem("token")
+    const res = await axios.get(API_URL + "/userinfo", {headers:{Authorization:token}} )
+    return res.data
+}
 
 const authService = {
   register,
   getUserByUserName,
   getUserById,
+  getUserInfo,
   login
 };
 

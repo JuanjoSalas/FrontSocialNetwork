@@ -42,7 +42,15 @@ export const register = createAsyncThunk(
         
     }
   })
-
+  export const getUserInfo = createAsyncThunk("users/getUserInfo", async (id) => {
+      try {
+        return await authService.getUserInfo(id);
+      } catch (error) {
+        console.log(error);
+        throw error;
+      }
+    }
+  );
 
 const authSlice = createSlice({
     name: "auth",
@@ -75,6 +83,9 @@ const authSlice = createSlice({
           state.token = action.payload.tokenM;
         })
         .addCase(getUserById.fulfilled,(state,action)=>{
+            state.user = action.payload.user
+        })
+        .addCase(getUserInfo.fulfilled,(state, action)=>{
             state.user = action.payload.user
         })
     } 
