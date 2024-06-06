@@ -1,7 +1,8 @@
 import "./Login.scss"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { login } from "../../features/auth/authSlice"
+import { login, reset } from "../../features/auth/authSlice"
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -9,7 +10,11 @@ const Login = () => {
         password:''
     })
     
-    const {email,password} = formData
+    const {email,password} = formData;
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate(); 
+
     const {isSuccess, isError, msg} = useSelector((state)=>state.auth)
 
     useEffect(() => {
@@ -26,7 +31,6 @@ const Login = () => {
             [e.target.name]:e.target.value,
         }))
     }
-    const dispatch = useDispatch()
 
     const onSubmit = (e) => {
         e.preventDefault()

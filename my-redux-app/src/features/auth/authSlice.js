@@ -26,15 +26,6 @@ export const register = createAsyncThunk(
     }
   );
 
-  export const getUserByUserName = createAsyncThunk("users/getUserByUserName", async (username)=>{
-    try {
-        return await authService.getUserByUserName(username)
-    } catch (error) {
-        console.log(error);
-        
-    }
-  });
-
   export const login = createAsyncThunk("auth/login", async (user) => {
     try {
       return await authService.login(user);
@@ -48,6 +39,24 @@ export const register = createAsyncThunk(
       return await authService.logout();
     } catch (error) {
       console.error(error);
+    }
+  });
+
+  export const getUserByUserName = createAsyncThunk("users/getUserByUserName", async (username)=>{
+    try {
+        return await authService.getUserByUserName(username)
+    } catch (error) {
+        console.log(error);
+        
+    }
+  });
+
+  export const getUserById = createAsyncThunk("users/getUserById", async (id)=>{
+    try {
+        return await authService.getUserById(id)
+    } catch (error) {
+        console.log(error);
+        
     }
   });
 
