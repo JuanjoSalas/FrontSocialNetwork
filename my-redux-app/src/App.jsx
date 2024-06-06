@@ -9,6 +9,7 @@ import './App.scss';
 import Search from './components/Search/Search';
 import UserDetail from './components/UserDetail/UserDetail';
 import Profile from './components/Profile/Profile';
+import PrivateZone from './guards/PrivateZone';
 
 function App() {
   return (
@@ -19,9 +20,9 @@ function App() {
           <Route path="/" element={<Home />} /> 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/search/:username" element={<Search />} />
-          <Route path="/userdetail/:id" element={<UserDetail />} />
-          <Route path="/profile" element={<Profile/>} />
+          <Route path="/search/:username" element={<PrivateZone><Search /></PrivateZone>} />
+          <Route path="/userdetail/:id" element={<PrivateZone><UserDetail /></PrivateZone>} />
+          <Route path="/profile" element={<PrivateZone><Profile/></PrivateZone>} />
         </Routes>
         <Footer/>
       </BrowserRouter>
