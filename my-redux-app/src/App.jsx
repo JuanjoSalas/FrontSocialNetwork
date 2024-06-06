@@ -10,6 +10,7 @@ import Search from './components/Search/Search';
 import UserDetail from './components/UserDetail/UserDetail';
 import Profile from './components/Profile/Profile';
 import PrivateZone from './guards/PrivateZone';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/search/:username" element={<PrivateZone><Search /></PrivateZone>} />
           <Route path="/userdetail/:id" element={<PrivateZone><UserDetail /></PrivateZone>} />
           <Route path="/profile" element={<PrivateZone><Profile/></PrivateZone>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer/>
       </BrowserRouter>
