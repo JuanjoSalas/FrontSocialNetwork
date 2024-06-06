@@ -4,6 +4,7 @@ import postsService from "./postsService";
 const initialStage = {
     posts:[],
     isLoading: false,
+    post:{}
 };
 
 export const getPosts = createAsyncThunk("posts/getPosts", async () => {
