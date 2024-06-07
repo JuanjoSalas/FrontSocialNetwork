@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import postsService from "./postsService";
+import post from "../../components/Post/Post"
 
-const initialStage = {
+const initialState = {
     posts:[],
     isLoading: false,
     post:{}
@@ -25,11 +26,15 @@ export const getPostById = createAsyncThunk("posts/getPostById", async (_id) => 
 
 export const PostsSlice = createSlice({
     name: "posts",
-    initialstage,
-    reducers: {},
+    initialState,
+    reducers: {
+        reset: (state) => {
+            state.isLoading = false;
+        },
+    },
     extraReducers: (builder) => {
         builder.addCase(getPosts.fulfilled, (state, action) => {
-            state.posts = action.payload;
+            state.posts = action.payload.posts;
             state.isLoading =  false;
         });
         builder.addCase(getPosts.pending, (state) => {

@@ -19,12 +19,13 @@ const Header = () => {
   
   return (
     <div>
-      <span>
+      
+      {user ? (
+        <>
+        <span>
         <Link to="/">Home /</Link>
       </span>
       <input type="text" name="search" onKeyUp={handleSearch} />
-      {user ? (
-        <>
         <span>
           <Link to="/profile">Profile /</Link>
         </span>
