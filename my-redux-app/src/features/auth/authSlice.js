@@ -1,12 +1,11 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import authService from "./authService";
 
-const token = localStorage.getItem("token") || "";
+const token = JSON.parse(localStorage.getItem("token")) || "";
 const user = JSON.parse(localStorage.getItem("user")) || null;
 
 const initialState = {
     user: user,
-    users:[],
     token: token,
     isSuccess: false,
     isError: false,
@@ -60,7 +59,16 @@ export const register = createAsyncThunk(
         console.log(error);
         
     }
-  });
+  })
+  export const getUserInfo = createAsyncThunk("users/getUserInfo", async (id) => {
+      try {
+        return await authService.getUserInfo(id);
+      } catch (error) {
+        console.log(error);
+        throw error;
+      }
+    }
+  );
 
 const authSlice = createSlice({
     name: "auth",
@@ -90,7 +98,7 @@ const authSlice = createSlice({
         .addCase(login.fulfilled, (state, action) => {
           state.isSuccess = true;
           state.user = action.payload.user;
-          state.token = action.payload.tokenM;
+          state.token = action.payload.token;
         })
         .addCase(getUserById.fulfilled,(state,action)=>{
             state.user = action.payload.user
@@ -98,6 +106,9 @@ const authSlice = createSlice({
         .addCase(login.rejected, (state, action) => {
           state.isError = true;
           state.message = action.payload;
+        })  
+        .addCase(getUserInfo.fulfilled,(state, action)=>{
+            state.user = action.payload.user
         })
         .addCase(logout.fulfilled, (state) => {
           state.user = null;

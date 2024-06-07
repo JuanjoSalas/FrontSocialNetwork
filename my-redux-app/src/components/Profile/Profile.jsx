@@ -1,5 +1,7 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getUserInfo } from '../../features/auth/authSlice';
+import { useParams } from 'react-router-dom';
 
 const formatBirthday = (isoDate) => {
   const date = new Date(isoDate);
@@ -11,7 +13,14 @@ const formatBirthday = (isoDate) => {
 
 
 const Profile = () => {
+  const {id} = useParams();
   const {user} = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(getUserInfo(id));
+},[])
+  if(!user) return <p>cargando...</p>
   
   return (
     <div>
@@ -19,7 +28,7 @@ const Profile = () => {
       <p>Lastname: {user.lastname}</p>
       <p>Nick: {user.username}</p>
       <p>Email: {user.email}</p>
-      <p>Birthdate: {formatBirthday(user.birthday)}</p>
+      <p>Birthdate:{user.birthday ? formatBirthday(user.birthday) : ''}</p>
     </div>
   )
 }
