@@ -36,11 +36,31 @@ const Login = () => {
         dispatch(login(formData));
     };
   return (
-    <form onSubmit={onSubmit}>
-        <input type="email" name="email" placeholder="Email" value={email} onChange={onChange}/>
-        <input type="password" name="password" placeholder="Password" value={password} onChange={onChange}/>
-        <button type="submit">Login</button>
-    </form>
+    <div className="container-login">
+        <div className="border-login">
+            <div className="login-box">
+                <p>Login</p>
+                <form onSubmit={onSubmit}>
+                    <div className="user-box">
+                        <input required type="email" name="email" placeholder="Email" value={email} onChange={onChange}/>
+                        <label>Email</label>
+                    </div>
+                    <div className="user-box">
+                        <input required type="password" name="password" placeholder="Password" value={password} onChange={onChange}/>
+                        <label>Password</label>
+                    </div>
+                    <button className="send" type="submit">
+                        <span className="effect"></span>
+                        <span className="effect"></span>
+                        <span className="effect"></span>
+                        <span className="effect"></span>
+                        Login
+                    </button>
+                </form>
+                <p>Don't have an account? <a href="" className="a2">Sign up!</a></p>
+            </div>
+        </div>
+    </div>
   )
 }
 export default Login
