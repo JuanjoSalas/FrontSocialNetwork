@@ -11,7 +11,19 @@ const Posts = () => {
         dispatch(getPosts());
     }, []);
     if (isLoading) {
-        return <h1>Cargando posts...</h1>;
+        return (
+            <div className="container-loader">
+                <div className="loader">
+                    <div className="loader-square"></div>
+                    <div className="loader-square"></div>
+                    <div className="loader-square"></div>
+                    <div className="loader-square"></div>
+                    <div className="loader-square"></div>
+                    <div className="loader-square"></div>
+                    <div className="loader-square"></div>
+                </div>
+            </div>
+        )
     }
     return (
         <div>
