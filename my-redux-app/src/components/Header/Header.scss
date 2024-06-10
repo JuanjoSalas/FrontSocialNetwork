@@ -1,0 +1,59 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #dbdbdb;
+  
+    .header-left {
+      display: flex;
+      align-items: center;
+  
+      .header-icon {
+        margin-right: 30px; // Aumenta el margen entre los íconos
+        font-size: 1.5em;
+        color: #262626;
+        cursor: pointer;
+  
+        &:hover {
+          color: #000;
+        }
+      }
+  
+      .header-search {
+        margin-right: 30px; // Aumenta el margen entre el icono y el campo de búsqueda
+        border: 1px solid #dbdbdb;
+        border-radius: 3px;
+        padding: 5px 10px;
+        font-size: 1em;
+      }
+    }
+  
+    .header-right {
+      display: flex;
+      align-items: center;
+  
+      .header-link {
+        margin-left: 30px; // Aumenta el margen entre los enlaces
+        font-size: 1em;
+        color: #262626;
+        text-decoration: none;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+  
+      .logout-icon {
+        margin-left: 30px; // Aumenta el margen entre el enlace de registro y el icono de logout
+        font-size: 1.5em;
+        cursor: pointer;
+  
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+  

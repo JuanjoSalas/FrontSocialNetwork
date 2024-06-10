@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserInfo } from '../../features/auth/authSlice';
 import { useParams } from 'react-router-dom';
+import './Profile.scss'
 
 const formatBirthday = (isoDate) => {
   const date = new Date(isoDate);
@@ -23,14 +24,19 @@ const Profile = () => {
   if(!user) return <p>cargando...</p>
   
   return (
-    <div>
-      <p>Name: {user.firstname}</p>
-      <p>Lastname: {user.lastname}</p>
-      <p>Nick: {user.username}</p>
-      <p>Email: {user.email}</p>
-      <p>Birthdate:{user.birthday ? formatBirthday(user.birthday) : ''}</p>
+    <div class="card">
+      <div class="bg"></div>
+      <div class="blob"></div>
+      <div class="content">
+        <p><strong>Name:</strong> {user.firstname}</p>
+        <p><strong>Lastname:</strong> {user.lastname}</p>
+        <p><strong>Nick:</strong> {user.username}</p>
+        <p><strong>Email:</strong> {user.email}</p>
+        <p><strong>Birthdate:</strong> {user.birthday ? formatBirthday(user.birthday) : ''}</p>
+      </div>
     </div>
-  )
+  );
+  
 }
 
 export default Profile
