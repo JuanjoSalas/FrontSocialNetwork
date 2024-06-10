@@ -1,0 +1,26 @@
+*{
+    background-color: #212121;
+}
+.nav-bar{
+    color: white;
+}
+.search-container {
+    position: relative;
+    display: inline-block;
+}
+
+.search-input {
+    width: 200px;
+    padding: 10px 10px 10px 30px; /* Espacio para el icono */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Hace que el icono no interfiera con el input */
+    font-size: 16px; /* Tamaño del icono */
+}
