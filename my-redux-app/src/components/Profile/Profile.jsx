@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserInfo } from '../../features/auth/authSlice';
 import { useParams } from 'react-router-dom';
+import wallpaper from "../../assets/img/wallpaper.png"
+import "./Profile.scss"
 
 const formatBirthday = (isoDate) => {
   const date = new Date(isoDate);
@@ -23,13 +25,19 @@ const Profile = () => {
   if(!user) return <p>cargando...</p>
   
   return (
-    <div>
-      <p>Name: {user.firstname}</p>
-      <p>Lastname: {user.lastname}</p>
-      <p>Nick: {user.username}</p>
-      <p>Email: {user.email}</p>
-      <p>Birthdate:{user.birthday ? formatBirthday(user.birthday) : ''}</p>
+    <div className='container-card'>
+      <div className='border-card'>
+        <div class="card">
+          <div className="card__img"><img className="wallpaper" src= {wallpaper}/></div>
+          <div className="card__avatar"><img className="img__avatar" src="https://images.stockcake.com/public/f/8/c/f8c9ddb6-a4aa-4025-b071-643ab3a359da/stylish-urban-fashion-stockcake.jpg" alt="" /></div>
+          <div className="card__title">{user.firstname} {user.lastname}</div>
+          <div className="card__subtitle">{user.username}</div>
+          <div className="card__subtitle">{user.email}</div>
+          <div className="card__subtitle">{user.birthday ? formatBirthday(user.birthday) : ''}</div>
+        </div>
+      </div>
     </div>
+
   )
 }
 
