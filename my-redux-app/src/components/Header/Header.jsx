@@ -21,37 +21,6 @@ const Header = () => {
   };
   
   return (
-<<<<<<< HEAD
-    <div>
-      
-      {user ? (
-        <>
-        <span>
-        <Link to="/">Home /</Link>
-      </span>
-      <input type="text" name="search" onKeyUp={handleSearch} />
-        <span>
-          <Link to="/profile">Profile /</Link>
-        </span>
-          <span
-            onClick={() => {
-              dispatch(logout());
-            }}
-          >
-            <Link to="/login"> Logout</Link>
-          </span>
-        </>
-      ) : (
-        <>
-          <span>
-            <Link to="/login"> Login /</Link>
-          </span>
-          <span>
-            <Link to="/register"> Register /</Link>
-          </span>
-        </>
-      )}
-=======
     <div className="header">
       <div className="header-left">
         <Link to="/" className="header-icon">
@@ -91,7 +60,6 @@ const Header = () => {
           </>
         )}
       </div>
->>>>>>> agustin
     </div>
   );
 };
