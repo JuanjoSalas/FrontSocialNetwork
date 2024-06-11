@@ -21,22 +21,27 @@ const Profile = () => {
   useEffect(()=>{
     dispatch(getUserInfo(id));
 },[])
-  if(!user) return <p>cargando...</p>
+  if(!user) return <p>Loading...</p>
   
   return (
-    <div class="card">
-      <div class="bg"></div>
-      <div class="blob"></div>
-      <div class="content">
-        <p><strong>Name:</strong> {user.firstname}</p>
-        <p><strong>Lastname:</strong> {user.lastname}</p>
-        <p><strong>Nick:</strong> {user.username}</p>
-        <p><strong>Email:</strong> {user.email}</p>
-        <p><strong>Birthdate:</strong> {user.birthday ? formatBirthday(user.birthday) : ''}</p>
-      </div>
+    <div>
+      <p>{user.firstname}</p>
+      <p>{user.lastname}</p>
+      <p>{user.username}</p>
+      <p>{user.email}</p>
+      <p>{user.birthday ? formatBirthday(user.birthday) : ''}</p>
+      {user.PostIds && user.PostIds.length > 0 ? (
+        user.PostIds.map(post => (
+          <div key={post._id}>
+            <h3>{post.title}</h3>
+            <p>{post.body}</p>
+          </div>
+        ))
+      ) : (
+        <p>No posts available</p>
+      )}
     </div>
   );
-  
 }
 
 export default Profile

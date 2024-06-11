@@ -18,6 +18,7 @@ const UserDetail = () => {
 
   if (!user) return <p>cargando...</p>;
 
+
   return (
     <div>
       <h3>UserDetail</h3>

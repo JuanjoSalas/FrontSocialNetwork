@@ -9,11 +9,14 @@ const API_URL = "http://localhost:3001/posts";
          Authorization:token
       }
     });
-    return res.data ;
+    console.log(res.data);
+    return res.data;
  };
 
  const getPostById = async (_id) => {
-    const res = await axios.get(API_URL + "/id" + _id);
+    console.log(_id);
+    const res = await axios.get(API_URL + "/id/" + _id);
+    console.log(res.data);
     return res.data;
  };
 
