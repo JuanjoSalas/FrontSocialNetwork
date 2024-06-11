@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Post.scss"
+import CreatePost from "../CreatePost/CreatePosts";
 
 const Post = () => {
     const { posts } = useSelector((state) => state.posts);

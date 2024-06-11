@@ -33,6 +33,15 @@ export const getPostsByUserId = createAsyncThunk("posts/getPostsByUserId", async
     }            
 });
 
+export const createPost = createAsyncThunk("posts/createPost", async (postData) => {
+    try {
+        return await postsService.createPost(postData);
+    } catch (error) {
+        console.error(error);
+    }
+});
+
+
 export const PostsSlice = createSlice({
     name: "posts",
     initialState,
@@ -51,7 +60,12 @@ export const PostsSlice = createSlice({
         });
         builder.addCase(getPostById.fulfilled, (state, action) => {
             state.post = action.payload.post;
-        });  
+        });
+        builder.addCase(createPost.fulfilled, (state, action) => {
+            state.posts.push(action.payload.post);
+            state.isLoading = false;
+        })
+
              
     },
 });

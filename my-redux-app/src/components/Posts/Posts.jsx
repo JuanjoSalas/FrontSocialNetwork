@@ -3,6 +3,8 @@ import Post from "../Post/Post"
 import { useDispatch, useSelector } from "react-redux"
 import { getPosts, reset } from "../../features/posts/postsSlice"
 import "./Posts.scss"
+import CreatePost from "../CreatePost/CreatePosts"
+
 
 const Posts = () => {
     const { isLoading } = useSelector((state) => state.posts);
@@ -16,6 +18,7 @@ const Posts = () => {
     return (
         <div>
             <h1>Posts</h1>
+            <CreatePost/>
             <Post/>
         </div>
     )
