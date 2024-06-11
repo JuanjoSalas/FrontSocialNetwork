@@ -22,7 +22,7 @@ const Profile = () => {
   useEffect(()=>{
     dispatch(getUserInfo(id));
 },[])
-  if(!user) return <p>cargando...</p>
+  if(!user) return <p>Loading...</p>
   
   return (
     <div className='container-card'>
@@ -34,6 +34,16 @@ const Profile = () => {
           <div className="card__subtitle">{user.username}</div>
           <div className="card__subtitle">{user.email}</div>
           <div className="card__subtitle">{user.birthday ? formatBirthday(user.birthday) : ''}</div>
+          {user.PostIds && user.PostIds.length > 0 ? (
+            user.PostIds.map(post => (
+              <div key={post._id}>
+                <h3>{post.title}</h3>
+                <p>{post.body}</p>
+              </div>
+            ))
+          ) : (
+            <p>No posts available</p>
+          )}
         </div>
       </div>
     </div>

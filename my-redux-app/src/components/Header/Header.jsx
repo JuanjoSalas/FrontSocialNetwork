@@ -11,8 +11,8 @@ export const Header = () => {
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
-    if (e.key == "Enter") {
-      navigate("/search/"+ search)
+    if (e.key === "Enter") {
+      navigate("/search/" + search);
     }
   };
   return (
