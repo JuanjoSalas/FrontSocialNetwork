@@ -2,7 +2,7 @@ import "./Login.scss";
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { login, reset } from "../../features/auth/authSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -51,7 +51,7 @@ const Login = () => {
                     </div>
                     <button type="submit">Login</button>
                 </form>
-                <p>Don't have an account? <a href="" className="a2">Sign up!</a></p>
+                <p>Don't have an account?  <Link to="/register" className="a2">Sign up!</Link></p>
             </div>
         </div>
     </div>
