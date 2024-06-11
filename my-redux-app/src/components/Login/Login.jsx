@@ -42,20 +42,14 @@ const Login = () => {
                 <p>Login</p>
                 <form onSubmit={onSubmit}>
                     <div className="user-box">
-                        <input required type="email" name="email" placeholder="Email" value={email} onChange={onChange}/>
+                        <input required type="email" name="email" value={email} onChange={onChange}/>
                         <label>Email</label>
                     </div>
                     <div className="user-box">
-                        <input required type="password" name="password" placeholder="Password" value={password} onChange={onChange}/>
+                        <input required type="password" name="password" value={password} onChange={onChange}/>
                         <label>Password</label>
                     </div>
-                    <button className="send" type="submit">
-                        <span className="effect"></span>
-                        <span className="effect"></span>
-                        <span className="effect"></span>
-                        <span className="effect"></span>
-                        Login
-                    </button>
+                    <button type="submit">Login</button>
                 </form>
                 <p>Don't have an account? <a href="" className="a2">Sign up!</a></p>
             </div>
