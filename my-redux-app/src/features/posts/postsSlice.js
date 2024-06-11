@@ -50,7 +50,7 @@ export const PostsSlice = createSlice({
             state.isLoading = true;
         });
         builder.addCase(getPostById.fulfilled, (state, action) => {
-            state.post = action.payload;
+            state.post = action.payload.post;
         });  
              
     },
