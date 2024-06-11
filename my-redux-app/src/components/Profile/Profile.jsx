@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserInfo } from '../../features/auth/authSlice';
 import { useParams } from 'react-router-dom';
+import './Profile.scss'
 
 const formatBirthday = (isoDate) => {
   const date = new Date(isoDate);
@@ -20,17 +21,27 @@ const Profile = () => {
   useEffect(()=>{
     dispatch(getUserInfo(id));
 },[])
-  if(!user) return <p>cargando...</p>
+  if(!user) return <p>Loading...</p>
   
   return (
     <div>
-      <p>Name: {user.firstname}</p>
-      <p>Lastname: {user.lastname}</p>
-      <p>Nick: {user.username}</p>
-      <p>Email: {user.email}</p>
-      <p>Birthdate:{user.birthday ? formatBirthday(user.birthday) : ''}</p>
+      <p>{user.firstname}</p>
+      <p>{user.lastname}</p>
+      <p>{user.username}</p>
+      <p>{user.email}</p>
+      <p>{user.birthday ? formatBirthday(user.birthday) : ''}</p>
+      {user.PostIds && user.PostIds.length > 0 ? (
+        user.PostIds.map(post => (
+          <div key={post._id}>
+            <h3>{post.title}</h3>
+            <p>{post.body}</p>
+          </div>
+        ))
+      ) : (
+        <p>No posts available</p>
+      )}
     </div>
-  )
+  );
 }
 
 export default Profile
