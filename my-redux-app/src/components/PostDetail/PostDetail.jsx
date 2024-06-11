@@ -16,8 +16,8 @@ const PostDetail = () => {
     return ( 
     <div>
     <h1>PostDetail</h1>
-    <p>Titulo: {post.post.title}</p> 
-    <p>Body: {post.post.body}</p>
+    <p>Titulo: {post.title}</p> 
+    <p>Body: {post.body}</p>
     </div>
     
     );
