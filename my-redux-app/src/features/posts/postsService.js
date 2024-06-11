@@ -14,8 +14,12 @@ const API_URL = "http://localhost:3001/posts";
  };
 
  const getPostById = async (_id) => {
-    console.log(_id);
-    const res = await axios.get(API_URL + "/id/" + _id);
+    const token = localStorage.getItem("token")
+    const res = await axios.get(API_URL + "/id/" + _id,{
+      headers:{
+         Authorization:token
+      }
+   });
     console.log(res.data);
     return res.data;
  };
