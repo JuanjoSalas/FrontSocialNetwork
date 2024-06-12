@@ -39,6 +39,7 @@ const Profile = () => {
             user.PostIds.map(post => (
               <div key={post._id}>
                 <h3>{post.title}</h3>
+                <img className="image" src="https://images.stockcake.com/public/2/6/a/26a3fd95-08ee-4b93-b506-d6dfc85c0414_large/mountain-biking-adventure-stockcake.jpg" alt="" />
                 <p>{post.body}</p>
               </div>
             ))

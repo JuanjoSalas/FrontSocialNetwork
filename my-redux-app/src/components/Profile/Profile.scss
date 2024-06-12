@@ -35,30 +35,31 @@
   }
   
   .wallpaper {
-    height: 100%;
-    border-radius: 20px 20px 0 0;
+    padding: 15px;
+    width: 100%;
+    border-radius: 35px 35px 0 0;
   }
   
   .card__avatar {
     position: absolute;
-    width: 114px;
-    height: 114px;
+    width: 140px;
+    height: 140px;
     background: #212121;
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 25%;
+    top: 25vw;
   }
   
   .img__avatar {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 100%;
   }
   
   .card__title {
-    margin-top: 80px;
+    margin-top: 140px;
     margin-bottom: 10px;
     font-weight: 500;
     font-size: 18px;
