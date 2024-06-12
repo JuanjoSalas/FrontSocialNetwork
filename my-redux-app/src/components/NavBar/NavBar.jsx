@@ -11,13 +11,6 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
-    if (e.key == "Enter") {
-      navigate("/search/"+ search)
-    }
-  };
-  
   return (
     <div className="nav-bar">
       
