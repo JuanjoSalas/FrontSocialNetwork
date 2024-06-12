@@ -29,8 +29,8 @@ function App() {
           <Route path="/profile" element={<PrivateZone><Profile/></PrivateZone>} />
           <Route path="/post/:id" element={<PrivateZone><PostDetail/></PrivateZone>} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/comments" element = {<Comments/>} />
-          <Route path="/createpost" element = {<CreatePost/>} />
+          <Route path="/comments" element = {<Comments/>}/>
+          <Route path="/createpost" element = {<CreatePost/>}/>
         </Routes>
         <NavBar/>
       </BrowserRouter>

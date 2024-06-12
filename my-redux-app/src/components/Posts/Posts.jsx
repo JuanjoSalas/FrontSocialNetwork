@@ -2,8 +2,9 @@ import React, { useEffect } from "react"
 import Post from "../Post/Post"
 import { useDispatch, useSelector } from "react-redux"
 import { getPosts, reset } from "../../features/posts/postsSlice"
+import { Link, useNavigate } from "react-router-dom";
 import "./Posts.scss"
-import CreatePost from "../CreatePost/CreatePosts"
+
 
 
 const Posts = () => {
@@ -28,8 +29,8 @@ const Posts = () => {
         )
     }
     return (
-        <div>
-            <CreatePost/>
+        <div className="container-newpost">
+            <button className="btn-newpost "><Link to="/createpost" className="newpost">New Post</Link></button>
             <Post/>
         </div>
     )
