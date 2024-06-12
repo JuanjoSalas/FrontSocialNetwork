@@ -20,7 +20,7 @@ const API_URL = "http://localhost:3001/posts";
     return res.data;
  };
 
- const createPost = async (postData) => {
+ const createPost = async (postDat) => {
    const token = localStorage.getItem("token");
    console.log(postData);
    const res = await axios.post(API_URL, postData, {

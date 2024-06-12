@@ -22,6 +22,7 @@ const Profile = () => {
     dispatch(getUserInfo(id));
 },[])
   if(!user) return <p>Loading...</p>
+
   
   return (
     <div>

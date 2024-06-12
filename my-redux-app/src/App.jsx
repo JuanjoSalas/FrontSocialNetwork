@@ -12,6 +12,7 @@ import Profile from './components/Profile/Profile';
 import PrivateZone from './guards/PrivateZone';
 import NotFound from './components/NotFound/NotFound';
 import PostDetail from "./components/PostDetail/PostDetail";
+import Comments from './components/Comments/Comments';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/profile" element={<PrivateZone><Profile/></PrivateZone>} />
           <Route path="/post/:id" element={<PrivateZone><PostDetail/></PrivateZone>} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/comments" element = {<Comments/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

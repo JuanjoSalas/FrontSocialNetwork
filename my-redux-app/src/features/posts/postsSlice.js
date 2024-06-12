@@ -6,6 +6,7 @@ const initialState = {
     posts:[],
     isLoading: false,
     post:{},
+    comments: [],
 
 };
 

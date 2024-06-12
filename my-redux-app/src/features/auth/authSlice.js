@@ -92,7 +92,7 @@ const authSlice = createSlice({
             state.message = action.payload;
           })
         .addCase(getUserByUserName.fulfilled,(state,action)=>{
-            state.users = action.payload
+            state.user = action.payload
 
         })
         .addCase(login.fulfilled, (state, action) => {
