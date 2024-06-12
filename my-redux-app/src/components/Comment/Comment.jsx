@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux';
 
 const Comment = () => {
   const { post } = useSelector(state => state.posts); 
-  if (post.CommentIds.length === 0 ) {
+  if (post.CommentIds && post.CommentIds.length === 0 ) {
     return <div>No comments yet</div>; 
   }
   return (
     <div>
-      {post.CommentIds.map(comment => ( 
+      {post.CommentIds && post.CommentIds.map(comment => ( 
         <div key={comment._id}>
           <p>{comment.body}</p>
         </div>
