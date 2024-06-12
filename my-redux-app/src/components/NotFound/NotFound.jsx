@@ -1,6 +1,11 @@
+import error from "../../assets/img/error.png"
+import "./NotFound.scss"
+
 const NotFound = () => {
     return (
-        <div>404 Page not found</div>
+        <div>
+            <img className="error" src={error}/>
+        </div>
     )
 }
 
