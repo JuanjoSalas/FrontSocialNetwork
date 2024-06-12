@@ -3,7 +3,7 @@ import { BrowserRouter,Routes, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
 import Register from './components/Register/Register';
 import Header from "./components/Header/Header";
-import Footer from './components/Footer/Footer';
+import NavBar from './components/NavBar/NavBar';
 import Home from "./components/Home/Home";
 import './App.scss';
 import Search from './components/Search/Search';
@@ -30,7 +30,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/comments" element = {<Comments/>}/>
         </Routes>
-        <Footer/>
+        <NavBar/>
       </BrowserRouter>
     </>
   )

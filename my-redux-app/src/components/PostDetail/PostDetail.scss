@@ -1,0 +1,38 @@
+.container-postDetail {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.border-postDetail {
+    --background: linear-gradient(to left, #f7ba2b 0%, #FF6F16 100%);
+    width: 72vw;
+    height: auto;
+    padding: 5px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: #f7ba2b;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+   }
+
+.postDetail {
+    position: relative;
+    width: 70vw;
+    height: auto;
+    border-radius: 20px;
+    background: #212121;
+}
+
+.postImage {
+    width: 62vw;
+    margin-left: 4vw;
+}
+
+.postBody {
+    color: white;
+    margin-left: 4vw;
+}

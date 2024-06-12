@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserInfo } from '../../features/auth/authSlice';
 import { useParams } from 'react-router-dom';
-import './Profile.scss'
+import wallpaper from "../../assets/img/wallpaper.png"
+import "./Profile.scss"
 
 const formatBirthday = (isoDate) => {
   const date = new Date(isoDate);
@@ -25,24 +26,30 @@ const Profile = () => {
 
   
   return (
-    <div>
-      <p>{user.firstname}</p>
-      <p>{user.lastname}</p>
-      <p>{user.username}</p>
-      <p>{user.email}</p>
-      <p>{user.birthday ? formatBirthday(user.birthday) : ''}</p>
-      {user.PostIds && user.PostIds.length > 0 ? (
-        user.PostIds.map(post => (
-          <div key={post._id}>
-            <h3>{post.title}</h3>
-            <p>{post.body}</p>
-          </div>
-        ))
-      ) : (
-        <p>No posts available</p>
-      )}
+    <div className='container-card'>
+      <div className='border-card'>
+        <div class="card">
+          <div className="card__img"><img className="wallpaper" src= {wallpaper}/></div>
+          <div className="card__avatar"><img className="img__avatar" src="https://images.stockcake.com/public/f/8/c/f8c9ddb6-a4aa-4025-b071-643ab3a359da/stylish-urban-fashion-stockcake.jpg" alt="" /></div>
+          <div className="card__title">{user.firstname} {user.lastname}</div>
+          <div className="card__subtitle">{user.username}</div>
+          <div className="card__subtitle">{user.email}</div>
+          <div className="card__subtitle">{user.birthday ? formatBirthday(user.birthday) : ''}</div>
+          {user.PostIds && user.PostIds.length > 0 ? (
+            user.PostIds.map(post => (
+              <div key={post._id}>
+                <h3>{post.title}</h3>
+                <p>{post.body}</p>
+              </div>
+            ))
+          ) : (
+            <p>No posts available</p>
+          )}
+        </div>
+      </div>
     </div>
-  );
+
+  )
 }
 
 export default Profile

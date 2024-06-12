@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getUserById } from '../../features/auth/authSlice';
 import { Card } from 'antd';
-import { Image } from '@chakra-ui/react';
 
 const { Meta } = Card;
 

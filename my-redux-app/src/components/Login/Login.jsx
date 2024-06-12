@@ -2,7 +2,7 @@ import "./Login.scss";
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { login, reset } from "../../features/auth/authSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Login = () => {
@@ -37,11 +37,25 @@ const Login = () => {
         dispatch(login(formData));
     };
   return (
-    <form onSubmit={onSubmit}>
-        <input type="email" name="email" placeholder="Email" value={email} onChange={onChange}/>
-        <input type="password" name="password" placeholder="Password" value={password} onChange={onChange}/>
-        <button type="submit">Login</button>
-    </form>
+    <div className="container-login">
+        <div className="border-login">
+            <div className="login-box">
+                <p>Login</p>
+                <form onSubmit={onSubmit}>
+                    <div className="user-box">
+                        <input required type="email" name="email" value={email} onChange={onChange}/>
+                        <label>Email</label>
+                    </div>
+                    <div className="user-box">
+                        <input required type="password" name="password" value={password} onChange={onChange}/>
+                        <label>Password</label>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account?  <Link to="/register" className="a2">Sign up!</Link></p>
+            </div>
+        </div>
+    </div>
   )
 }
 export default Login

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { register, reset } from '../../features/auth/authSlice'
 import { notification } from "antd";
-
+import "./Register.scss"
 
 
 //import './Register.scss'
@@ -65,63 +65,93 @@ const Register = () => {
     }    
 
    return (
-    <form onSubmit={onSubmit}>
-    <input
-      type="text"
-      name="firstname"
-      value={firstname}
-      onChange={onChange}
-      placeholder="Insert your name"
-    />
-      <input
-      type="text"
-      name="lastname"
-      value={lastname}
-      onChange={onChange}
-      placeholder="Insert your lastname"
-    />
-      <input
-      type="text"
-      name="username"
-      value={username}
-      onChange={onChange}
-      placeholder="Insert your username"
-    />
-      <input
-      type="date"
-      name="birthday"
-      value={birthday}
-      onChange={onChange}
-      placeholder="Insert your birthday"
-    />
-    <input
-      type="email"
-      name="email"
-      value={email}
-      onChange={onChange}
-      placeholder="Insert your email"
-    />
-    <input
-      type="password"
-      name="password"
-      value={password}
-      onChange={onChange}
-      placeholder="Insert your password"
-    />
-    <input
-      type="password"
-      name="password2"
-      value={password2}
-      onChange={onChange}
-      placeholder="Insert your password"
-    />
-    <button type="submit">Register</button>
-  </form>
-    
+    <div className="form-card1">
+      <div className="form-card2">
+        <form className="form" onSubmit={onSubmit}>
+          <p className="form-heading">Register</p>
+          <div className="form-field">
+            <input
+              className="input-field"
+              required
+              type="text"
+              name="firstname"
+              value={firstname}
+              onChange={onChange}
+              placeholder="Insert your name"
+            />
+          </div>
+          <div className="form-field">
+            <input
+              className="input-field"
+              required
+              type="text"
+              name="lastname"
+              value={lastname}
+              onChange={onChange}
+              placeholder="Insert your lastname"
+            />
+          </div>
+          <div className="form-field">
+            <input
+              className="input-field"
+              required
+              type="text"
+              name="username"
+              value={username}
+              onChange={onChange}
+              placeholder="Insert your username"
+            />
+          </div>
+          <div className="form-field">
+            <input
+              className="input-field"
+              required
+              type="date"
+              name="birthday"
+              value={birthday}
+              onChange={onChange}
+              placeholder="Insert your birthday"
+            />
+          </div>
+          <div className="form-field">
+            <input
+              className="input-field"
+              required
+              type="email"
+              name="email"
+              value={email}
+              onChange={onChange}
+              placeholder="Insert your email"
+            />
+          </div>
+          <div className="form-field">
+            <input
+              className="input-field"
+              required
+              type="password"
+              name="password"
+              value={password}
+              onChange={onChange}
+              placeholder="Insert your password"
+            />
+          </div>
+          <div className="form-field">
+            <input
+              className="input-field"
+              required
+              type="password"
+              name="password2"
+              value={password2}
+              onChange={onChange}
+              placeholder="Insert your password"
+            />
+          </div>  
+          <button className="sendMessage-btn" type="submit">Register</button> 
+        </form>
+      </div>
+    </div>
   )
 }
 
 
 export default Register
-
-//HOLA
