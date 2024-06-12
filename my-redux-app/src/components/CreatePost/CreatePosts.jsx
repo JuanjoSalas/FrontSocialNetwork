@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createPost } from '../../features/posts/postsSlice';
+import "./CreatePosts.scss"
 
 const CreatePost = () => {
     const [title, setTitle] = useState('');
@@ -14,24 +15,28 @@ const CreatePost = () => {
     };
 
     return (
-        <form onSubmit={onSubmit}>
-            <div>
-                <label>Title:</label>
-                <input
-                    type="text"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                />
-            </div>
-            <div>
-                <label>Body:</label>
-                <textarea
-                    value={body}
-                    onChange={(e) => setBody(e.target.value)}
-                ></textarea>
-            </div>
-            <button type="submit">Create Post</button>
-        </form>
+        <div className="create-container">
+            <form className="create" onSubmit={onSubmit}>
+            <   div className="create-group">
+                    <label for="title">Title</label>
+                    <input
+                        for="title"
+                        type="text"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                    />
+                </div>
+                <div className="create-group">
+                    <label for="body">Body</label>
+                    <textarea
+                        name="body"
+                        value={body}
+                        onChange={(e) => setBody(e.target.value)}
+                    ></textarea>
+                </div>
+                <button class="form-submit-btn" type="submit">Create Post</button>
+            </form>
+        </div>
     );
 };
 
