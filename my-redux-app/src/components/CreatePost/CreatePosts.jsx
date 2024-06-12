@@ -10,6 +10,7 @@ const CreatePost = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         const postData = { title, body};
+        console.log(postData);
         dispatch(createPost(postData));
     };
 
