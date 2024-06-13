@@ -42,6 +42,23 @@ export const createPost = createAsyncThunk("posts/createPost", async (postData) 
     }
 });
 
+export const like = createAsyncThunk("posts/like", async (_id) => {
+    try {
+      return await postsService.like(_id);
+    } catch (error) {
+      console.error(error);
+    }
+  });
+
+  export const dislike = createAsyncThunk("posts/dislike", async (_id) => {
+    try {
+      return await postsService.dislike(_id);
+    } catch (error) {
+      console.error(error);
+    }
+  });
+  
+
 
 export const PostsSlice = createSlice({
     name: "posts",
@@ -66,6 +83,25 @@ export const PostsSlice = createSlice({
             state.posts.push(action.payload.post);
             state.isLoading = false;
         })
+        builder.addCase(like.fulfilled, (state, action) => {
+            const posts = state.posts.map((post) => {
+              if (post._id === action.payload._id) {
+                post = action.payload;
+              }
+              return post
+          })
+          state.posts = posts
+        });
+        builder.addCase(dislike.fulfilled, (state, action) => {
+            const posts = state.posts.map((post) => {
+              if (post._id === action.payload._id) {
+                post = action.payload;
+              }
+              return post
+          })
+          state.posts = posts
+        });
+  
 
              
     },
