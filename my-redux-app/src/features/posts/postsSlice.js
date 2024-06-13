@@ -111,8 +111,13 @@ export const PostsSlice = createSlice({
           state.posts = posts
         });
         builder.addCase(deletePost.fulfilled, (state, action) => {
-            const postId = action.meta.arg;
-            state.posts = state.posts.filter((post) => post._id !== postId);
+            const posts = state.posts.map((post) => {
+                if (post._id === action.payload._id) {
+                  post = action.payload;
+                }
+                return post
+            })
+            state.posts = posts
           });
       },
     });

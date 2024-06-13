@@ -66,15 +66,13 @@ const deletePost = async (_id) => {
   if (!token) {
     throw new Error("No token found");
   }
-  const res = await axios.put(API_URL + "/id/"+_id,{}, {
+  const res = await axios.delete(API_URL + "/id/"+_id,{
       headers: {
         authorization: token,
       },
     } );
   return res.data;
 };
-
-
 
 
 

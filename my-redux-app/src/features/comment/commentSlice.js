@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import commentService from './commentService';
 import Comment from '../../components/Comment/Comment';
+import postsService from '../posts/postsService';
 
 const token = localStorage.getItem('token');
 
@@ -51,6 +52,15 @@ export const commentSlice = createSlice({
 				state.message = action.payload.msg;
 				state.isError = true;
 			});
+			builder.addCase(deleteComment.fulfilled, (state, action) => {
+				const comments = state.comments.map((comment) => {
+					if (comment._id === action.payload._id) {
+					  comment = action.payload;
+					}
+					return comment
+				})
+				state.comment = comments
+			  });
 	},
 });
 
@@ -83,5 +93,14 @@ export const updateComment = createAsyncThunk('comment/updateComment', async (co
 		console.error(error);
 	}
 });
+export const deleteComment = createAsyncThunk("comment/delete", async (_id) => {
+    try {
+      return await commentService.deleteComment(_id);
+    } catch (error) {
+      console.error(error);
+    }
+  });
+
+
 
 export default commentSlice.reducer;
