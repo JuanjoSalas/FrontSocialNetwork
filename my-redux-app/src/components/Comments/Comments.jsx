@@ -18,7 +18,10 @@ const Comments = () => {
 		const comment = { body, PostId: post._id };
 		dispatch(createComment(comment));
 		setBody('');
-		navigate("/post/" + post._id );
+		setTimeout(() => {
+			
+			navigate("/post/" + post._id );
+		}, 1000);
 	};
 
 	return (
