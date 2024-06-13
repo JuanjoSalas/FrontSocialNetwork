@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getUserById } from '../../features/auth/authSlice';
-import { Card } from 'antd';
-
-const { Meta } = Card;
+import wallpaper from "../../assets/img/wallpaper.png"
 
 const UserDetail = () => {
   const { id } = useParams();
@@ -19,21 +17,15 @@ const UserDetail = () => {
 
 
   return (
-    <div>
-      <h3>UserDetail</h3>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <img src='https://bit.ly/dan-abramov' borderRadius='full' boxSize='150px' />
-        <div style={{ marginLeft: 20 }}>
-          <Card
-            title='User Details'
-            style={{ width: 300 }}
-          >
-            <Meta title={`Nombre: ${user.firstname}`} />
-            <Meta title={`Apellido: ${user.lastname}`} />
-            <Meta title={`Usuario: ${user.username}`} />
-          </Card>
+    <div className='container-card'>
+      <div className='border-card'>
+        <div className="card">
+          <div className="card__img"><img className="wallpaper" src= {wallpaper}/></div>
+          <div className="card__avatar"><img className="img__avatar" src="https://bit.ly/dan-abramov" alt="" /></div>
+          <div className="card__title">{user.firstname} {user.lastname}</div>
+          <div className="card__subtitle">{user.username}</div>
         </div>
-      </div>
+      </div> 
     </div>
   );
 };
