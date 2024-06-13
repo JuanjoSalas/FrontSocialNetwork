@@ -1,30 +1,30 @@
-### Proyecto Social Network
+## PROYECTO SOCIAL NETWORK
 Este proyecto es una red social desarrollada con React.js y Redux.
 
 ## Componentes
 
-1 - Home
+1 - # Home
 Renderiza una lista de publicaciones (Posts component) en la página de inicio.
 
-2 - Register
+2 - # Register
 Proporciona un formulario para el registro de usuarios con campos para nombre de usuario, correo electrónico, fecha de nacimiento, nombre, apellido y contraseña. Valida la edad durante el registro y envía acciones a Redux para el registro.
 
-3 - Login
+3 - # Login
 Permite a los usuarios iniciar sesión con su correo electrónico y contraseña. Envía acciones de inicio de sesión a Redux y redirige al perfil del usuario al iniciar sesión correctamente.
 
-4 - Post
+4 - # Post
 Muestra publicaciones individuales con opciones para dar me gusta/no me gusta, eliminar publicaciones y navegar a vistas detalladas de publicaciones. Utiliza Redux para la gestión del estado.
 
-5 - Comment
+5 - # Comment
 Gestiona comentarios asociados con publicaciones, permitiendo a los usuarios eliminar sus comentarios. Utiliza Redux para la gestión del estado.
 
-6 - Profile
+6 - # Profile
 Muestra información del perfil del usuario, incluyendo nombre de usuario, correo electrónico, fecha de nacimiento y publicaciones creadas por el usuario. Utiliza Redux para obtener detalles del usuario y gestionar el estado.
 
-7 - Search
+7 - # Search
 Obtiene información del usuario basada en el parámetro del nombre de usuario en la URL. Utiliza Redux para obtener detalles del usuario y gestionar el estado.
 
-8 - User
+8 - # User
 Lista nombres de usuario como enlaces a sus perfiles detallados. Utiliza Redux para gestionar el estado.
 
 ## Gestión del Estado con Redux
