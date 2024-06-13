@@ -57,6 +57,15 @@ export const like = createAsyncThunk("posts/like", async (_id) => {
       console.error(error);
     }
   });
+
+  export const deletePost = createAsyncThunk("posts/delete", async (_id) => {
+    try {
+      return await postsService.deletePost(_id);
+    } catch (error) {
+      console.error(error);
+    }
+  });
+
   
 
 
@@ -101,11 +110,14 @@ export const PostsSlice = createSlice({
           })
           state.posts = posts
         });
-  
+        builder.addCase(deletePost.fulfilled, (state, action) => {
+            const postId = action.meta.arg;
+            state.posts = state.posts.filter((post) => post._id !== postId);
+          });
+      },
+    });
 
-             
-    },
-});
+  
 
 export const { reset } = PostsSlice.actions;
 export default PostsSlice.reducer;
