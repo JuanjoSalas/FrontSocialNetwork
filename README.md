@@ -1,30 +1,30 @@
-# PROYECTO SOCIAL NETWORK
+# Proyecto Social Network 📱🌍
 Este proyecto es una red social desarrollada con React.js y Redux.
 
-# Componentes
+## Componentes
 
-## - Home
+- Home
 Renderiza una lista de publicaciones (Posts component) en la página de inicio.
 
-## - Register
+- Register
 Proporciona un formulario para el registro de usuarios con campos para nombre de usuario, correo electrónico, fecha de nacimiento, nombre, apellido y contraseña. Valida la edad durante el registro y envía acciones a Redux para el registro.
 
-## - Login
+- Login
 Permite a los usuarios iniciar sesión con su correo electrónico y contraseña. Envía acciones de inicio de sesión a Redux y redirige al perfil del usuario al iniciar sesión correctamente.
 
-## - Post
+- Post
 Muestra publicaciones individuales con opciones para dar me gusta/no me gusta, eliminar publicaciones y navegar a vistas detalladas de publicaciones. Utiliza Redux para la gestión del estado.
 
-## - Comment
+- Comment
 Gestiona comentarios asociados con publicaciones, permitiendo a los usuarios eliminar sus comentarios. Utiliza Redux para la gestión del estado.
 
-## - Profile
+- Profile
 Muestra información del perfil del usuario, incluyendo nombre de usuario, correo electrónico, fecha de nacimiento y publicaciones creadas por el usuario. Utiliza Redux para obtener detalles del usuario y gestionar el estado.
 
-## - Search
+- Search
 Obtiene información del usuario basada en el parámetro del nombre de usuario en la URL. Utiliza Redux para obtener detalles del usuario y gestionar el estado.
 
-## - User
+- User
 Lista nombres de usuario como enlaces a sus perfiles detallados. Utiliza Redux para gestionar el estado.
 
 ## Gestión del Estado con Redux
@@ -50,13 +50,6 @@ Hoja de Estilos SCSS: Estilos personalizados para componentes utilizando archivo
 <img width="512" alt="Captura de pantalla 2024-06-14 a la(s) 1 24 51" src="https://github.com/JuanjoSalas/FrontSocialNetwork/assets/162991987/ff002bd0-28ac-492d-aeb3-23c2c100272c">
 <img width="512" alt="Captura de pantalla 2024-06-14 a la(s) 1 25 23" src="https://github.com/JuanjoSalas/FrontSocialNetwork/assets/162991987/35983d98-02fe-4548-9e40-bbbcf82134ef">
 <img width="515" alt="Captura de pantalla 2024-06-14 a la(s) 1 25 42" src="https://github.com/JuanjoSalas/FrontSocialNetwork/assets/162991987/b82adc85-69b5-46f6-a226-977e5ef3a0a2">
-
-
-
-
-
-
-
 
 
 ## Para Empezar
