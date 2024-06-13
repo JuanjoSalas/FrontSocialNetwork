@@ -13,6 +13,7 @@ import PrivateZone from './guards/PrivateZone';
 import NotFound from './components/NotFound/NotFound';
 import PostDetail from "./components/PostDetail/PostDetail";
 import Comments from './components/Comments/Comments';
+import CreatePost from './components/CreatePost/CreatePosts';
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
           <Route path="/profile" element={<PrivateZone><Profile/></PrivateZone>} />
           <Route path="/post/:id" element={<PrivateZone><PostDetail/></PrivateZone>} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/comments" element = {<Comments/>}/>
+          <Route path="/comments" element = {<Comments/>} />
+          <Route path="/createpost" element = {<CreatePost/>} />
         </Routes>
         <NavBar/>
       </BrowserRouter>
