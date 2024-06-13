@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getUserById } from '../../features/auth/authSlice';
+import { getUserById, getUserByUserName } from '../../features/auth/authSlice';
 import { Card } from 'antd';
 
 const { Meta } = Card;
@@ -12,7 +12,7 @@ const UserDetail = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getUserById(id));
+    dispatch(getUserByUserName(id));
   }, [id]);
 
   if (!user) return <p>cargando...</p>;

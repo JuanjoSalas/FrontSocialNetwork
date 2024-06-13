@@ -43,11 +43,14 @@ const updateComment = async (postData) => {
 	return res.data;
 };
 
+
+
 const postService = {
     createComment,
     getAllComments,
     getCommentById,
     updateComment,
+
 };
 
 export default postService;
