@@ -3,28 +3,36 @@ Este proyecto es una red social desarrollada con React.js y Redux.
 
 ## Componentes
 
-- Home
+- Home:
+  
 Renderiza una lista de publicaciones (Posts component) en la página de inicio.
 
-- Register
+- Register:
+  
 Proporciona un formulario para el registro de usuarios con campos para nombre de usuario, correo electrónico, fecha de nacimiento, nombre, apellido y contraseña. Valida la edad durante el registro y envía acciones a Redux para el registro.
 
-- Login
+- Login:
+  
 Permite a los usuarios iniciar sesión con su correo electrónico y contraseña. Envía acciones de inicio de sesión a Redux y redirige al perfil del usuario al iniciar sesión correctamente.
 
-- Post
+- Post:
+  
 Muestra publicaciones individuales con opciones para dar me gusta/no me gusta, eliminar publicaciones y navegar a vistas detalladas de publicaciones. Utiliza Redux para la gestión del estado.
 
-- Comment
+- Comment:
+  
 Gestiona comentarios asociados con publicaciones, permitiendo a los usuarios eliminar sus comentarios. Utiliza Redux para la gestión del estado.
 
-- Profile
+- Profile:
+  
 Muestra información del perfil del usuario, incluyendo nombre de usuario, correo electrónico, fecha de nacimiento y publicaciones creadas por el usuario. Utiliza Redux para obtener detalles del usuario y gestionar el estado.
 
-- Search
+- Search:
+  
 Obtiene información del usuario basada en el parámetro del nombre de usuario en la URL. Utiliza Redux para obtener detalles del usuario y gestionar el estado.
 
-- User
+- User:
+  
 Lista nombres de usuario como enlaces a sus perfiles detallados. Utiliza Redux para gestionar el estado.
 
 ## Gestión del Estado con Redux
