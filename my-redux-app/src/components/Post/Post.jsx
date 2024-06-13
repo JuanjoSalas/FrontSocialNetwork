@@ -21,28 +21,26 @@ const Post = () => {
                             <img className="image" src="https://images.stockcake.com/public/2/6/a/26a3fd95-08ee-4b93-b506-d6dfc85c0414_large/mountain-biking-adventure-stockcake.jpg" alt="" />
                             <p className="body">{post.body}</p>
                         </Link>
-                        </div>
-                <span className="wish">{post.likes?.length}</span>
-       {isAlreadyLiked ? (
-          <HeartFilled  onClick={async()=>  {
-           await dispatch(dislike(post._id))
-        dispatch(getPosts())
-        } 
-         } />
-        ) : (
-          <HeartOutlined onClick={async()=> {
-           await dispatch(like(post._id))
-        dispatch(getPosts()) 
-        }
-         } />
-        )}
-           <button  onClick={async()=> {
-            await dispatch(deletePost(post._id))
-        dispatch(getPosts())}}>Eliminar</button>
-
-       
+                        <span className="wish">{post.likes?.length}</span>
+                        {isAlreadyLiked ? (
+                            <HeartFilled  onClick={async()=>  {
+                            await dispatch(dislike(post._id))
+                            dispatch(getPosts())
+                            } 
+                            } />
+                        ) : (
+                        <HeartOutlined onClick={async()=> {
+                        await dispatch(like(post._id))
+                        dispatch(getPosts()) 
+                        }
+                        } />
+                        )}
+                    <button className="remove" onClick={async()=> {
+                    await dispatch(deletePost(post._id))
+                    dispatch(getPosts())}}>Eliminar</button>
+                </div>
             </div>
-                    </div>
+        </div>
                
         );
     });
