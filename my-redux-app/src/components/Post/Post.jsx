@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Post.scss"
+import { HeartOutlined, HeartFilled } from "@ant-design/icons";
+import CreatePost from "../CreatePost/CreatePosts";
+import { dislike, getPosts, like } from "../../features/posts/postsSlice";
 
 const Post = () => {
     const { posts } = useSelector((state) => state.posts);
+    const {user} = useSelector ((state)=> state.auth); 
+    const dispatch = useDispatch();
     const post = posts?.map((post) => {
+        const isAlreadyLiked = post.LikeIds?.includes(user._id);
         return (
             <div className='container-post'>
                 <div className='border-post'>
@@ -15,9 +21,25 @@ const Post = () => {
                             <img className="image" src="https://images.stockcake.com/public/2/6/a/26a3fd95-08ee-4b93-b506-d6dfc85c0414_large/mountain-biking-adventure-stockcake.jpg" alt="" />
                             <p className="body">{post.body}</p>
                         </Link>
-                    </div>
-                </div>
+                        </div>
+                <span className="wish">{post.likes?.length}</span>
+       {isAlreadyLiked ? (
+          <HeartFilled  onClick={async()=>  {
+           await dispatch(dislike(post._id))
+        dispatch(getPosts())
+        } 
+         } />
+        ) : (
+          <HeartOutlined onClick={async()=> {
+           await dispatch(like(post._id))
+        dispatch(getPosts()) 
+        }
+         } />
+        )}
+
             </div>
+                    </div>
+               
         );
     });
     return <div>{post}</div>;

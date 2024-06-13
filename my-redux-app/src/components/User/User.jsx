@@ -9,8 +9,8 @@ const User = () => {
         <div>
         {users && users.map((user) => {
           return (
-            <div key={user._id}>
-              <Link to={"/userdetail/"+ user._id}>
+            <div key={user.id}>
+              <Link to={"/userdetail/" + user.id}>
               <p>{user.username}</p>
               </Link>
             </div>
