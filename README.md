@@ -52,9 +52,11 @@ Hoja de Estilos SCSS: Estilos personalizados para componentes utilizando archivo
 - Ant Design: Utilizado para componentes de interfaz de usuario como notificaciones (notification).
 
 # Imagenes
-
+- Home
+   
 <img width="513" alt="Captura de pantalla 2024-06-14 a la(s) 1 22 41" src="https://github.com/JuanjoSalas/FrontSocialNetwork/assets/162991987/d10e3287-f12a-4464-aa78-b193c526fab5">
 
+-
 <img width="515" alt="Captura de pantalla 2024-06-14 a la(s) 1 23 07" src="https://github.com/JuanjoSalas/FrontSocialNetwork/assets/162991987/959a69ac-bf55-47ec-ac4b-da27560e56a6">
 
 <img width="513" alt="Captura de pantalla 2024-06-14 a la(s) 1 23 50" src="https://github.com/JuanjoSalas/FrontSocialNetwork/assets/162991987/4f36a9d0-e14c-4951-98a4-9311293a8f0c">
@@ -69,7 +71,10 @@ Hoja de Estilos SCSS: Estilos personalizados para componentes utilizando archivo
 ## Para Empezar
 Para ejecutar el proyecto localmente:
 
-Clona el repositorio desde GitHub.
-Instala las dependencias usando npm install.
-Inicia el servidor de desarrollo con npm start.
-Abre http://localhost para ver la aplicación en el navegador.
+1- Clona el repositorio desde GitHub.
+
+2- Instala las dependencias usando npm install.
+
+3- Inicia el servidor de desarrollo con npm start.
+
+4- Abre http://localhost para ver la aplicación en el navegador.
