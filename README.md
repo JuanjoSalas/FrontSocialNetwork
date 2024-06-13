@@ -54,7 +54,7 @@ Hoja de Estilos SCSS: Estilos personalizados para componentes utilizando archivo
 # Imagenes
 - Home
    
-<img width="513" alt="Captura de pantalla 2024-06-14 a la(s) 1 22 41" src="https://github.com/JuanjoSalas/FrontSocialNetwork/assets/162991987/d10e3287-f12a-4464-aa78-b193c526fab5">
+<img width="513" alt="Captura de pantalla 2024-06-14 a la(s) 1 22 41" src="https://github.com/JuanjoSalas/FrontSocialNetwork/assets/162991987/d10e3287-f12a-4464-aa78-b193c526fab5"> <img width="515" alt="Captura de pantalla 2024-06-14 a la(s) 1 23 07" src="https://github.com/JuanjoSalas/FrontSocialNetwork/assets/162991987/959a69ac-bf55-47ec-ac4b-da27560e56a6">
 
 - Crear Publicación
   
