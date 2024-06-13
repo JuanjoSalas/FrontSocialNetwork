@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Post.scss"
 import { HeartOutlined, HeartFilled } from "@ant-design/icons";
 import CreatePost from "../CreatePost/CreatePosts";
-import { dislike, getPosts, like } from "../../features/posts/postsSlice";
+import { deletePost, dislike, getPosts, like } from "../../features/posts/postsSlice";
 
 const Post = () => {
     const { posts } = useSelector((state) => state.posts);
@@ -36,7 +36,11 @@ const Post = () => {
         }
          } />
         )}
+           <button  onClick={async()=> {
+            await dispatch(deletePost(post._id))
+        dispatch(getPosts())}}>Eliminar</button>
 
+       
             </div>
                     </div>
                
