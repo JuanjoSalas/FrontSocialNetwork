@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getUserInfo } from '../../features/auth/authSlice';
 import { useParams } from 'react-router-dom';
 import wallpaper from "../../assets/img/wallpaper.png";
-import Comment from "../Comment/Comment";S
+import Comment from "../Comment/Comment";
 import "./Profile.scss"
 
 const formatBirthday = (isoDate) => {

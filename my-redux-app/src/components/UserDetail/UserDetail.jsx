@@ -22,7 +22,7 @@ const UserDetail = () => {
     <div>
       <h3>UserDetail</h3>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <Image src='https://bit.ly/dan-abramov' borderRadius='full' boxSize='150px' />
+        <img src='https://bit.ly/dan-abramov' borderRadius='full' boxSize='150px' />
         <div style={{ marginLeft: 20 }}>
           <Card
             title='User Details'

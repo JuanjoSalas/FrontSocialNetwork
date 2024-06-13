@@ -17,13 +17,22 @@ const CreatePost = () => {
     return (
         <div className="create-container">
             <form className="create" onSubmit={onSubmit}>
-            <   div className="create-group">
+                <div className="create-group">
                     <label for="title">Title</label>
                     <input
-                        for="title"
+                        name="title"
                         type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
+                    />
+                </div>
+                <div className="create-group">
+                    <label for="image">Image Link</label>
+                    <input
+                        name="image"
+                        type="text"
+                        //value={image}
+                        //onChange={(e) => setImage(e.target.value)}
                     />
                 </div>
                 <div className="create-group">

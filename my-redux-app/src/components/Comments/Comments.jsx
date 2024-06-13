@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createComment } from '../../features/comment/commentSlice';
 import Comment from '../Comment/Comment';
+import "./Comments.scss"
 
 const Comments = () => {
 	const { user } = useSelector((state) => state.auth);

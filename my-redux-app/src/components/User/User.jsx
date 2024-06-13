@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const User = () => {
-    const {users, isLoading } = useSelector((state)=> state.auth);
+    const {users } = useSelector((state)=> state.auth);
     return (
         <div>
         {users && users.map((user) => {
