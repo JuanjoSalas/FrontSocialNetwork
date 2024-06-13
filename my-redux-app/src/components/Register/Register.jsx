@@ -4,9 +4,6 @@ import { register, reset } from '../../features/auth/authSlice'
 import { notification } from "antd";
 import "./Register.scss"
 
-
-//import './Register.scss'
-
 const Register = () => {
     const [formData , setFormData] = useState({
         username:"",

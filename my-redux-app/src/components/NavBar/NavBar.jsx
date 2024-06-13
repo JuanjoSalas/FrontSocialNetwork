@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { logout } from "../../features/auth/authSlice"
 import "./NavBar.scss"
 
 const NavBar = () => {
   const { user } = useSelector((state) => state.auth);
-  const [search, setSearch] = useState("");
   
   const dispatch = useDispatch();
-  const navigate = useNavigate()
 
   return (
     <div className="nav-bar">

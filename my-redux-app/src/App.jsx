@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter>
         <Header/>
         <Routes>
-          <Route path="/" element={<Home />} /> 
+          <Route path="/" element={<PrivateZone><Home /></PrivateZone>} /> 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/search/:username" element={<PrivateZone><Search /></PrivateZone>} />
@@ -29,8 +29,8 @@ function App() {
           <Route path="/profile" element={<PrivateZone><Profile/></PrivateZone>} />
           <Route path="/post/:id" element={<PrivateZone><PostDetail/></PrivateZone>} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/comments" element = {<Comments/>}/>
-          <Route path="/createpost" element = {<CreatePost/>}/>
+          <Route path="/comments" element = {<PrivateZone><Comments/></PrivateZone>}/>
+          <Route path="/createpost" element = {<PrivateZone><CreatePost/></PrivateZone>}/>
         </Routes>
         <NavBar/>
       </BrowserRouter>

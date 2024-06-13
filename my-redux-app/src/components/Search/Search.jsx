@@ -13,8 +13,7 @@ const Search = () => {
     },[username]);
   return (
     <div>
-<User/>
-
+      <User/>
     </div>
   )
 }
