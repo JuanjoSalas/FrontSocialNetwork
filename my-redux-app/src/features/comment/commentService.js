@@ -12,16 +12,7 @@ const getAllComments = async () => {
 );
 	return res.data;
 };
-const getCommentById = async (id) => {
-	const token = localStorage.getItem('token');
-	const res = await axios.get(API_URL + '/id/' + id,{
-		headers: {
-			Authorization: token,
-		},
-	}
-);
-	return res.data;
-};
+
 const createComment = async (postData) => {
 	const token = localStorage.getItem('token');
 	const res = await axios.post(API_URL , postData,{
@@ -32,9 +23,10 @@ const createComment = async (postData) => {
 );
 	return res.data;
 };
-const updateComment = async (postData) => {
+
+const deleteComment = async (_id) => {
 	const token = localStorage.getItem('token');
-	const res = await axios.post(API_URL + '/id/'+postData._id, postData, {
+	const res = await axios.delete(API_URL + /id/ + _id,{
 		headers: {
 			Authorization: token,
 		},
@@ -43,11 +35,13 @@ const updateComment = async (postData) => {
 	return res.data;
 };
 
+
 const postService = {
     createComment,
     getAllComments,
-    getCommentById,
-    updateComment,
+	deleteComment,
+
+
 };
 
 export default postService;

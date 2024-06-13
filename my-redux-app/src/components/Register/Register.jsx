@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { register, reset } from '../../features/auth/authSlice'
 import { notification } from "antd";
 import "./Register.scss"
+import { useNavigate } from 'react-router-dom';
+
 
 const Register = () => {
     const [formData , setFormData] = useState({
@@ -16,6 +18,7 @@ const Register = () => {
     })
     const {username,email,password,birthday,firstname,lastname,password2} = formData
     const { isSuccess, msg, isError } = useSelector((state) => state.auth);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (isSuccess) {
@@ -59,6 +62,10 @@ const Register = () => {
           return;
       }
         dispatch(register(formData))
+        setTimeout(()=>{
+          navigate("/login");
+        },1000);
+
     }    
 
    return (
