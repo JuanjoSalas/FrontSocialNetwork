@@ -6,16 +6,16 @@ import User from '../User/User';
 const Users = () => {
     const dispatch = useDispatch();
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(getUserByUserName())
-    },[])
-  return (
-    <div>
-        <h1>Users</h1>
-        <User/>
+    }, [])
+    return (
+        <div>
+            <h1>Users</h1>
+            <User />
 
-    </div>
-  )
+        </div>
+    )
 }
 
 export default Users

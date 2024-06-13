@@ -4,7 +4,7 @@ import "./NotFound.scss"
 const NotFound = () => {
     return (
         <div>
-            <img className="error" src={error}/>
+            <img className="error" src={error} />
         </div>
     )
 }

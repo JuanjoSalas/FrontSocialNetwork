@@ -2,3 +2,10 @@
   margin: 0;
   padding: 0;
 }
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px; // Tamaño base de la fuente
+  font-weight: 400; // Peso normal
+  line-height: 1.5; // Altura de línea base
+  color: #000; // Color de texto por defecto
+}

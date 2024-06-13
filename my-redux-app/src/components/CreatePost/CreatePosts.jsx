@@ -2,19 +2,21 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createPost } from '../../features/posts/postsSlice';
 import "./CreatePosts.scss"
+import { useNavigate } from 'react-router-dom';
 
 const CreatePost = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const onSubmit = (e) => {
         e.preventDefault();
         const postData = { title, body};
-        console.log(postData);
         dispatch(createPost(postData));
         setTitle('');
         setBody('');
+        navigate("/");
     };
 
     return (
@@ -34,8 +36,6 @@ const CreatePost = () => {
                     <input
                         name="image"
                         type="text"
-                        //value={image}
-                        //onChange={(e) => setImage(e.target.value)}
                     />
                 </div>
                 <div className="create-group">

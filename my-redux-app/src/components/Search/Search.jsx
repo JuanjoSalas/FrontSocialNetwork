@@ -6,14 +6,14 @@ import User from '../User/User';
 
 
 const Search = () => {
-    const {username} = useParams();
-    const dispatch = useDispatch()
-    useEffect(()=>{
-        dispatch(getUserByUserName(username))
-    },[username]);
+  const { username } = useParams();
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getUserByUserName(username))
+  }, [username]);
   return (
     <div>
-      <User/>
+      <User />
     </div>
   )
 }

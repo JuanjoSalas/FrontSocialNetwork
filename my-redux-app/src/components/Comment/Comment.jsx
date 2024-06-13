@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteComment, getAllComments } from '../../features/comment/commentSlice';
-import { getPostById, getPosts } from '../../features/posts/postsSlice';
+import { deleteComment } from '../../features/comment/commentSlice';
+import { getPostById} from '../../features/posts/postsSlice';
 import { useParams } from 'react-router-dom';
 
 const Comment = () => {

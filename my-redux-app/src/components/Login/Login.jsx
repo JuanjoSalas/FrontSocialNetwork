@@ -13,13 +13,13 @@ const Login = () => {
     const { email, password } = formData;
 
     const dispatch = useDispatch();
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
 
     const { isSuccess, isError, msg } = useSelector((state) => state.auth);
 
     useEffect(() => {
         if (isSuccess) {
-            navigate("/profile"); 
+            navigate("/profile");
         }
         dispatch(reset());
     }, [isSuccess, navigate, dispatch]);
@@ -33,29 +33,28 @@ const Login = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log('formData', formData);
         dispatch(login(formData));
     };
-  return (
-    <div className="container-login">
-        <div className="border-login">
-            <div className="login-box">
-                <p>Login</p>
-                <form onSubmit={onSubmit}>
-                    <div className="user-box">
-                        <input required type="email" name="email" value={email} onChange={onChange}/>
-                        <label>Email</label>
-                    </div>
-                    <div className="user-box">
-                        <input required type="password" name="password" value={password} onChange={onChange}/>
-                        <label>Password</label>
-                    </div>
-                    <button type="submit">Login</button>
-                </form>
-                <p>Don't have an account?  <Link to="/register" className="a2">Sign up!</Link></p>
+    return (
+        <div className="container-login">
+            <div className="border-login">
+                <div className="login-box">
+                    <p>Login</p>
+                    <form onSubmit={onSubmit}>
+                        <div className="user-box">
+                            <input required type="email" name="email" value={email} onChange={onChange} />
+                            <label>Email</label>
+                        </div>
+                        <div className="user-box">
+                            <input required type="password" name="password" value={password} onChange={onChange} />
+                            <label>Password</label>
+                        </div>
+                        <button type="submit">Login</button>
+                    </form>
+                    <p>Don't have an account?  <Link to="/register" className="a2">Sign up!</Link></p>
+                </div>
             </div>
         </div>
-    </div>
-  )
+    )
 }
 export default Login

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createComment } from '../../features/comment/commentSlice';
-import Comment from '../Comment/Comment';
 import { useNavigate } from "react-router-dom";
-import "./Comments.scss"
 import { getPostById } from '../../features/posts/postsSlice';
 import { useParams } from 'react-router-dom';
+import Comment from '../Comment/Comment';
+import "./Comments.scss"
 
 const Comments = () => {
     const { id } = useParams();

@@ -7,68 +7,68 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
-    const [formData , setFormData] = useState({
-        username:"",
-        email:"",
-        birthday:"",
-        firstname:"",
-        lastname:"",
-        password:"",
-        password2:""
-    })
-    const {username,email,password,birthday,firstname,lastname,password2} = formData
-    const { isSuccess, msg, isError } = useSelector((state) => state.auth);
-    const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    birthday: "",
+    firstname: "",
+    lastname: "",
+    password: "",
+    password2: ""
+  })
+  const { username, email, password, birthday, firstname, lastname, password2 } = formData
+  const { isSuccess, msg, isError } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        if (isSuccess) {
-          notification.success({
-            message: "Success",
-            description: msg,
-          });
-        }
-        if (isError) {
-          notification.error({
-            message: "Error!!!",
-            description: msg,
-          });
-        }
-        dispatch(reset())
-      }, [isSuccess, msg, isError]);
-
-    const dispatch = useDispatch()
-
-    const onChange = (e)=>{
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        })
+  useEffect(() => {
+    if (isSuccess) {
+      notification.success({
+        message: "Success",
+        description: msg,
+      });
     }
-    const onSubmit = (e) => {
-        e.preventDefault()
-        const today = new Date();
-        const birthDate = new Date(birthday);
-        let age = today.getFullYear() - birthDate.getFullYear();
-        const monthDiff = today.getMonth() - birthDate.getMonth();
-        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-          age--;
-      }
+    if (isError) {
+      notification.error({
+        message: "Error!!!",
+        description: msg,
+      });
+    }
+    dispatch(reset())
+  }, [isSuccess, msg, isError]);
 
-      if (age < 18) {
-          notification.error({
-              message: "Error!!!",
-              description: "You must be 18 years or older to register.",
-          });
-          return;
-      }
-        dispatch(register(formData))
-        setTimeout(()=>{
-          navigate("/login");
-        },1000);
+  const dispatch = useDispatch()
 
-    }    
+  const onChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+  const onSubmit = (e) => {
+    e.preventDefault()
+    const today = new Date();
+    const birthDate = new Date(birthday);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
 
-   return (
+    if (age < 18) {
+      notification.error({
+        message: "Error!!!",
+        description: "You must be 18 years or older to register.",
+      });
+      return;
+    }
+    dispatch(register(formData))
+    setTimeout(() => {
+      navigate("/login");
+    }, 1000);
+
+  }
+
+  return (
     <div className="form-card1">
       <div className="form-card2">
         <form className="form" onSubmit={onSubmit}>
@@ -149,8 +149,8 @@ const Register = () => {
               onChange={onChange}
               placeholder="Insert your password"
             />
-          </div>  
-          <button className="sendMessage-btn" type="submit">Register</button> 
+          </div>
+          <button className="sendMessage-btn" type="submit">Register</button>
         </form>
       </div>
     </div>
