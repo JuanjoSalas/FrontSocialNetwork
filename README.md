@@ -52,11 +52,17 @@ Hoja de Estilos SCSS: Estilos personalizados para componentes utilizando archivo
 - Ant Design: Utilizado para componentes de interfaz de usuario como notificaciones (notification).
 
 # Imagenes
+
 <img width="513" alt="Captura de pantalla 2024-06-14 a la(s) 1 22 41" src="https://github.com/JuanjoSalas/FrontSocialNetwork/assets/162991987/d10e3287-f12a-4464-aa78-b193c526fab5">
+
 <img width="515" alt="Captura de pantalla 2024-06-14 a la(s) 1 23 07" src="https://github.com/JuanjoSalas/FrontSocialNetwork/assets/162991987/959a69ac-bf55-47ec-ac4b-da27560e56a6">
+
 <img width="513" alt="Captura de pantalla 2024-06-14 a la(s) 1 23 50" src="https://github.com/JuanjoSalas/FrontSocialNetwork/assets/162991987/4f36a9d0-e14c-4951-98a4-9311293a8f0c">
+
 <img width="512" alt="Captura de pantalla 2024-06-14 a la(s) 1 24 51" src="https://github.com/JuanjoSalas/FrontSocialNetwork/assets/162991987/ff002bd0-28ac-492d-aeb3-23c2c100272c">
+
 <img width="512" alt="Captura de pantalla 2024-06-14 a la(s) 1 25 23" src="https://github.com/JuanjoSalas/FrontSocialNetwork/assets/162991987/35983d98-02fe-4548-9e40-bbbcf82134ef">
+
 <img width="515" alt="Captura de pantalla 2024-06-14 a la(s) 1 25 42" src="https://github.com/JuanjoSalas/FrontSocialNetwork/assets/162991987/b82adc85-69b5-46f6-a226-977e5ef3a0a2">
 
 
