@@ -12,6 +12,8 @@ const CreatePost = () => {
         const postData = { title, body};
         console.log(postData);
         dispatch(createPost(postData));
+        setTitle('');
+        setBody('');
     };
 
     return (
