@@ -49,7 +49,7 @@ const Profile = () => {
               </div>
             ))
           ) : (
-            <p>No posts available</p>
+            <p className='no-post'>No posts available</p>
           )}
         </div>
       </div>
