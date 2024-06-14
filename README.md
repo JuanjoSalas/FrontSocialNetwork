@@ -1,6 +1,8 @@
 # Proyecto Social Network 📱🌍
 Este proyecto es una red social desarrollada con React.js y Redux.
 
+- Proyecto despleagdo en AWS.
+
 ## Componentes
 
 - Home:
